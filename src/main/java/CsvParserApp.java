@@ -1,11 +1,17 @@
+import readers.FileReaderFactory;
+import readers.FilesReader;
+
 import java.io.FileReader;
+import java.util.TimerTask;
 
 public class CsvParserApp {
 
     public static void main(String[] args) {
         //TODO: Implement me
         final String FILE_PATH = "./src/main/resources/address.csv";
-        FileReader fileReader = new FileReader(FILE_PATH);
+        //final String FILE_PATH = "./src/main/resources/address.xml";
+
+        FilesReader fileReader = FileReaderFactory.getFileReader(FILE_PATH);
 
         Runtime runtime = Runtime.getRuntime();
 
@@ -15,7 +21,8 @@ public class CsvParserApp {
 
         long startTime = System.currentTimeMillis();
 
-        //fileReader.readLinesFromFile();
+        // TODO: Implement me
+        fileReader.readFromFile(FILE_PATH);
 
         long endTime = System.currentTimeMillis();
 
