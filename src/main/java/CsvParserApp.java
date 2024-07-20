@@ -1,6 +1,6 @@
 import java.io.FileReader;
 
-public class IpCounterApp {
+public class CsvParserApp {
 
     public static void main(String[] args) {
         //TODO: Implement me
