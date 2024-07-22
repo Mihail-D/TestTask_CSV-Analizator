@@ -8,9 +8,8 @@ import java.util.TimerTask;
 public class CsvParserApp {
 
     public static void main(String[] args) throws IOException {
-        //TODO: Implement me
-        final String FILE_PATH = "./src/main/resources/address.csv";
-        //final String FILE_PATH = "./src/main/resources/address.xml";
+        //final String FILE_PATH = "./src/main/resources/address.csv";
+        final String FILE_PATH = "./src/main/resources/address.xml";
 
         FilesReader fileReader = FileReaderFactory.getFileReader(FILE_PATH);
 
@@ -22,7 +21,6 @@ public class CsvParserApp {
 
         long startTime = System.currentTimeMillis();
 
-        // TODO: Implement me
         fileReader.readFromFile(FILE_PATH);
 
         long endTime = System.currentTimeMillis();

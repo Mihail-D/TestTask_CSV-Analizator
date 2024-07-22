@@ -17,7 +17,7 @@ public class CsvFileReader implements FilesReader {
     private static final Map<String, List<Integer>> estateRegister = new HashMap<>();
 
     @Override
-    public void readFromFile(String path) throws IOException {
+    public void readFromFile(String path) {
         if (!Files.exists(Path.of(path))) {
             throw new RuntimeException("Файл отсутствует. Укажите корректный путь к файлу.");
         }
@@ -34,6 +34,8 @@ public class CsvFileReader implements FilesReader {
                     estateRegister.computeIfAbsent(key, k -> new ArrayList<>()).add(value);
                 }
             }
+        }catch (IOException e) {
+            throw new RuntimeException(e);
         }
         DataProcessor.processEstateRegister(estateRegister);
     }
