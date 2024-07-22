@@ -1,9 +1,7 @@
 import readers.FileReaderFactory;
 import readers.FilesReader;
 
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.TimerTask;
 
 public class CsvParserApp {
 

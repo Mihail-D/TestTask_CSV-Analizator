@@ -1,7 +1,8 @@
 package readers.impl;
 
-import readers.FilesReader;
 import processors.DataProcessor;
+import readers.FilesReader;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -34,7 +35,7 @@ public class CsvFileReader implements FilesReader {
                     estateRegister.computeIfAbsent(key, k -> new ArrayList<>()).add(value);
                 }
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         DataProcessor.processEstateRegister(estateRegister);
