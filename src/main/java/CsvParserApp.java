@@ -1,5 +1,6 @@
 import readers.FileReaderFactory;
 import readers.FilesReader;
+import validators.Validator;
 
 import java.io.IOException;
 
@@ -19,6 +20,7 @@ public class CsvParserApp {
 
         long startTime = System.currentTimeMillis();
 
+        Validator.validateFilePath(FILE_PATH);
         fileReader.readFromFile(FILE_PATH);
 
         long endTime = System.currentTimeMillis();

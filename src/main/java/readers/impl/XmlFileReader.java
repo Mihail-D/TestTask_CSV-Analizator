@@ -3,6 +3,7 @@ package readers.impl;
 import processors.DataProcessor;
 import processors.XmlStringFormatter;
 import readers.FilesReader;
+import validators.Validator;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -29,6 +30,7 @@ public class XmlFileReader implements FilesReader {
 
             while ((line = reader.readLine()) != null) {
                 if (!line.contains("?xml") && !line.contains("root")) {
+                    Validator.isXmlStringValid(line);
                     String str = XmlStringFormatter.formatXmlString(line);
                     String[] data = str.split(";");
 

@@ -2,6 +2,7 @@ package readers.impl;
 
 import processors.DataProcessor;
 import readers.FilesReader;
+import validators.Validator;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -25,8 +26,9 @@ public class CsvFileReader implements FilesReader {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
-
             while ((line = reader.readLine()) != null) {
+                Validator.isCsvStringValid(line);
+
                 if (!line.contains("city")) {
                     String[] data = line.split(";");
                     String key = data[0] + ";" + data[1] + ";" + data[2];
