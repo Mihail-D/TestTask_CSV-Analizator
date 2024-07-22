@@ -1,4 +1,6 @@
-package readers;
+package readers.impl;
+
+import readers.FilesReader;
 
 public class XmlFileReader implements FilesReader {
 

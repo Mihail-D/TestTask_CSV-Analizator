@@ -2,11 +2,12 @@ import readers.FileReaderFactory;
 import readers.FilesReader;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.TimerTask;
 
 public class CsvParserApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //TODO: Implement me
         final String FILE_PATH = "./src/main/resources/address.csv";
         //final String FILE_PATH = "./src/main/resources/address.xml";

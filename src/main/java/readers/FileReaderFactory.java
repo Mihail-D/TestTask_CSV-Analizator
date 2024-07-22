@@ -1,6 +1,10 @@
 package readers;
 
+import readers.impl.CsvFileReader;
+import readers.impl.XmlFileReader;
+
 public class FileReaderFactory {
+
     public static FilesReader getFileReader(String path) {
         if (path.endsWith(".csv")) {
             return new CsvFileReader();
